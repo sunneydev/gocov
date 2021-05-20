@@ -22,6 +22,7 @@ func main() {
 	}
 
 	fmt.Printf("Total coverage: %v\n", calculate(profiles))
+	os.Remove(fn)
 }
 
 func getProfiles(path string) (profiles []*cover.Profile, err error) {
