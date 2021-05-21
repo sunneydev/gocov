@@ -19,14 +19,10 @@ func main() {
 	}
 
 	fmt.Printf("Total coverage: %v\n", calculate(profiles))
-	os.Remove(fn)
 }
 
 func calculate(profiles []*cover.Profile) string {
-	var (
-		statements int
-		covered    int
-	)
+	var statements, covered int
 
 	for _, profile := range profiles {
 		for _, block := range profile.Blocks {
